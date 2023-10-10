@@ -1,5 +1,5 @@
-import { Perro } from "./perro.js";
-import { Persona } from "./persona.js";
+import { Perro } from "./Perro.js";
+import { Persona } from "./Persona.js";
 
 const Roberto = new Persona();
 const Boris = new Perro();
