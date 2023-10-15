@@ -1,49 +1,38 @@
 export class Animal {
-    #nombre = "def nombre";
-    #hambre = false;
-    #hambreValor = 0;
+    #nombre;
+    #hambre;
+    #hambreValor;
 
-    constructor(){
+    constructor(nombre = "def nombre"){
+        this.#nombre = nombre;
         this.#hambreValor = this.getRandomInt(100)
-        this.tieneHambre(this);
+        this.tieneHambre();
         console.clear();
 
         setInterval(() => {
             this.#hambreValor--;
             console.log(this.#hambreValor);
+            this.tieneHambre();
         }, 1000);
     };
 
     getRandomInt(max) {
         return Math.floor(Math.random() * max);
     }
-
-    setNombre(nombre) {
-        this.#nombre = nombre;
-    }
-    getNombre() {
-        return this.#nombre;
-    }
-    setHambre(hambre) {
-        this.#hambre = hambre;
-    }
-    getHambre() {
-        return this.#hambre;
-    }
     
     tieneHambre() {
 
         if (this.#hambreValor <= 30) {
             console.log("au au, humano quiero comida");
-            this.setHambre(true);
+            this.#hambre = true;
 
         } else if (this.#hambreValor > 30 && this.#hambreValor < 60) {
             console.log("au au, en un rato tengo hambre");
-            this.setHambre(false);
+            this.#hambre = false;
 
         } else {
             console.log("au au, estoy lleno");
-            this.setHambre(false);
+            this.#hambre = false;
         }
     }
 
