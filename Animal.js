@@ -7,12 +7,10 @@ export class Animal {
         this.#nombre = nombre;
         this.#hambreValor = this.getRandomInt(100)
         this.tieneHambre();
-        console.clear();
 
         setInterval(() => {
             this.#hambreValor--;
             console.log(this.#hambreValor);
-            this.tieneHambre();
         }, 1000);
     };
 
@@ -34,6 +32,7 @@ export class Animal {
             console.log("au au, estoy lleno");
             this.#hambre = false;
         }
+        return this.#hambre;
     }
 
     alimentarseCon() {

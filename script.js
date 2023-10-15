@@ -6,11 +6,13 @@ const perros = [new Perro("Boris")];
 
 class Interaccion {
     constructor() {
-        personas.forEach(persona => {
-            perros.forEach(perro => {
-                persona.darComida(perro);
+        setInterval(() => {
+            personas.forEach(persona => {
+                perros.forEach(perro => {
+                    persona.darComida(perro);
+                });
             });
-        });
+        }, 1000);
     }
 }
 
