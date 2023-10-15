@@ -1,10 +1,17 @@
 import { Perro } from "./Perro.js";
 import { Persona } from "./Persona.js";
 
-const Roberto = new Persona();
-const Boris = new Perro();
+const personas = [new Persona("Roberto")];
+const perros = [new Perro("Boris")];
 
-Roberto.setNombre("Roberto");
-Boris.setNombre("Boris");
+class Interaccion {
+    constructor() {
+        personas.forEach(persona => {
+            perros.forEach(perro => {
+                persona.darComida(perro);
+            });
+        });
+    }
+}
 
-Roberto.darComida(Boris);
+new Interaccion();
