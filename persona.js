@@ -1,15 +1,12 @@
 export class Persona {
-    #nombre = "def nombre";
+    #nombre;
 
-    setNombre(nombre) {
+    constructor(nombre = "def nombre") {
         this.#nombre = nombre;
-    }
-    getNombre() {
-        return this.#nombre;
     }
 
     darComida(perro) {
-        if (perro.getHambre()) {
+        if (perro.tieneHambre()) {
             console.log("Aca esta la comida")
             perro.alimentarseCon();
         } else {
